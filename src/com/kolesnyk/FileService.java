@@ -13,7 +13,7 @@ public class FileService {
     public void findNotesAndSaveToFile(String pathToFile) {
         List<String> notes = finder.findNotesInFile(pathToFile);
 
-        System.out.println("notes>" + notes);
+        System.out.println("notes>" + pathToFile + notes);
 
         if (!notes.isEmpty()) {
             loader.saveNotes(pathToFile, notes);
@@ -29,6 +29,6 @@ public class FileService {
                 findNotesAndSaveToFile(file.getPath());
             }
         }
-        executor.shutdown();
+//        executor.shutdown();
     }
 }
